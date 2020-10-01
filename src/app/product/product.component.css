@@ -1,0 +1,36 @@
+table, th, td {
+    border: 1px solid black;
+  }
+
+th{color:red}
+td{color:blue}
+h2{color:green}
+label {color:rgb(117, 35, 199)}
+button{color:royalblue}
+
+.Productlist{
+  display:inline;
+  /* grid-gap:20px; */
+  grid-auto-columns: repeat(3,1fr) ;
+  /* grid-auto-flow:row; */
+  margin-right: 30px;
+  margin-left: 30px;
+}
+
+.card{
+  float:left;
+  margin-right: 30px;
+  
+}
+.Add{
+  clear:both;
+}
+a.lastViewed{
+  color:brown;
+  font-weight:bold;
+}
+
+#productcompo{
+  
+  padding: 30px;
+}

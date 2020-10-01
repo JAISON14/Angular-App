@@ -1,0 +1,40 @@
+
+<div id="productcompo">
+<h2>Products List:</h2>
+
+
+<table >
+  <tr>
+    <th>Product Name</th>
+    <th>Quantity</th>
+  </tr>
+  <tr *ngFor='let product of products'>
+    <td>
+      <a [routerLink]="['/products',product.productname]">{{product.productname}}</a>
+    </td>
+    <td>{{product.quantity}}</td>
+  </tr>
+</table>
+<div class="Productlist">
+<div  *ngFor='let product of products'>
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">{{product.productname}}</h5>
+    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a [routerLink]="['/products',product.productname]">Details</a>
+    <a href="#" class="card-link">Another link</a>
+  </div>
+</div>
+</div>
+</div>
+<div class="Add">
+<br>
+  <label >Enter product name:</label>
+  <input   [(ngModel)]="pname"  />
+  <label >Enter quantity:</label>
+  <input   [(ngModel)]="quant" /><br><br>
+  <button (click)="AddProduct()">Add Product</button>
+</div>
+
+</div>
