@@ -2,7 +2,7 @@
 <div id="productcompo">
 <h2>Products List:</h2>
 
-
+<img [src]="link">
 <table >
   <tr>
     <th>Product Name</th>
@@ -10,23 +10,186 @@
   </tr>
   <tr *ngFor='let product of products'>
     <td>
-      <a [routerLink]="['/products',product.productname]">{{product.productname}}</a>
+      <a >{{product.productname}}</a>
     </td>
     <td>{{product.quantity}}</td>
   </tr>
 </table>
-<div class="Productlist">
-<div  *ngFor='let product of products'>
-<div class="card" style="width: 18rem;">
-  <div class="card-body">
-    <h5 class="card-title">{{product.productname}}</h5>
-    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a [routerLink]="['/products',product.productname]">Details</a>
-    <a href="#" class="card-link">Another link</a>
+Filter price returns:{{filter[0]?.displayPrice}} 
+
+<!-- Filters -->
+ <div class="container">
+<br>
+<p>
+  
+  <button class="btn btn-success" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+    Filters
+  </button>
+  <button class="btn btn-success" type="button"  >
+    Add Product
+  </button>
+</p>
+<div class="collapse" id="collapseExample">
+  <div class="card card-body filter">
+   
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 col-sm-6 col-xs-12 bootCols">
+        
+            <label>
+                <input type="checkbox" [checked]="filter[0]?.displayproductname" (change)="filter[0].displayproductname=!filter[0].displayproductname">
+                Display Car Name
+            </label>
+          </div>
+          <div class="col-md-3 col-sm-6 col-xs-12 bootCols">    
+            <label>
+              <input type="checkbox" [checked]=filter[0]?.displayquantity (change)="filter[0].displayquantity=!filter[0].displayquantity">
+              Display Quantity
+            </label>
+          </div>
+            <div class="col-md-3 col-sm-6 col-xs-12 bootCols">  
+            <label>
+              <input type="checkbox" [checked]=filter[0]?.displayEngine (change)="filter[0].displayEngine=!filter[0].displayEngine">
+              Display Engine
+            </label>
+          </div>
+            <div class="col-md-3 col-sm-6 col-xs-12 bootCols">
+            <label>
+              <input type="checkbox" [checked]=filter[0]?.displayEngineType (change)="filter[0].displayEngineType=!filter[0].displayEngineType">
+              Display Engine Type
+            </label>
+          </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3 col-sm-6 col-xs-12 bootCols">
+            <label>
+              <input type="checkbox" [checked]=filter[0]?.displayFuel_Type (change)="filter[0].displayFuel_Type=!filter[0].displayFuel_Type">
+              Display Fuel Type
+            </label>
+          </div>
+            <div class="col-md-3 col-sm-6 col-xs-12 bootCols">
+            <label>
+              <input type="checkbox" [checked]=filter[0]?.displayMax_Power (change)="filter[0].displayMax_Power=!filter[0].displayMax_Power">
+              Display Max Power
+            </label>
+          </div>
+            <div class="col-md-3 col-sm-6 col-xs-12 bootCols">
+            <label>
+              <input type="checkbox" [checked]=filter[0]?.displayMax_Torque (change)="filter[0].displayMax_Torque=!filter[0].displayMax_Torque">
+              Display Max Torque
+            </label>
+          </div>
+            <div class="col-md-3 col-sm-6 col-xs-12 bootCols">
+            <label>
+              <input type="checkbox" [checked]=filter[0]?.displayMileage (change)="filter[0].displayMileage=!filter[0].displayMileage">
+              Display Mileage
+            </label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3 col-sm-6 col-xs-12 bootCols">
+          <label>
+            <input type="checkbox" [checked]=filter[0]?.displayPrice (change)="filter[0].displayPrice=!filter[0].displayPrice">
+            Display Price
+          </label>
+        </div>
+          <div class="col-md-3 col-sm-6 col-xs-12 bootCols">
+          <label>
+            <input type="checkbox" [checked]=filter[0]?.displayBrand (change)="filter[0].displayBrand=!filter[0].displayBrand">
+            Display Brand
+          </label>
+        </div>
+          <div class="col-md-3 col-sm-6 col-xs-12 bootCols">
+          <label>
+            <input type="checkbox" [checked]=filter[0]?.displayHeadlights (change)="filter[0].displayHeadlights=!filter[0].displayHeadlights">
+            Display Headlights
+          </label>
+        </div>
+          <div class="col-md-3 col-sm-6 col-xs-12 bootCols">
+          <label>
+            <input type="checkbox" [checked]=filter[0]?.displayWarranty (change)="filter[0].displayWarranty=!filter[0].displayWarranty">
+            Display Warranty
+          </label>
+        </div>
+      </div>
+        <div class="row">
+            <div class="col-md-3 col-sm-6 col-xs-12 bootCols">
+            <label>
+              <input type="checkbox" [checked]=filter[0]?.displayDriving_Range (change)="filter[0].displayDriving_Range=!filter[0].displayDriving_Range">
+              Display Driving Range
+            </label>
+          </div>
+            <div class="col-md-3 col-sm-6 col-xs-12 bootCols">
+            <label>
+              <input type="checkbox" [checked]=filter[0]?.displayDrivetrain (change)="filter[0].displayDrivetrain=!filter[0].displayDrivetrain">
+              Display Drivetrain
+            </label>
+          </div>
+            <div class="col-md-3 col-sm-6 col-xs-12 bootCols">
+            <label>
+              <input type="checkbox" [checked]=filter[0]?.displayTransmission (change)="filter[0].displayTransmission=!filter[0].displayTransmission">
+              Display Transmission
+            </label>
+          </div>
+            <div class="col-md-3 col-sm-6 col-xs-12 bootCols">
+            <label>
+              <input type="checkbox" [checked]=filter[0]?.displaySeating_Capacity (change)="filter[0].displaySeating_Capacity=!filter[0].displaySeating_Capacity">
+              Display Car Seating Capacity
+            </label>
+          </div>
+        </div>
+        
+
+  </div>
+    
   </div>
 </div>
-</div>
+</div> 
+
+
+<!-- Product List display cards -->
+<div class="Productlist">
+  <div  *ngFor='let car of cars'>
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        
+        <img class="card-img-top" [src]="car.img_url">
+        
+        <h5 *ngIf="filter[0].displayproductname" class="card-title">{{car.productname}}</h5>
+      
+        <ul class="list-group list-group-flush">
+          <li *ngIf="filter[0].displayPrice" class="list-group-item"><b>Price:</b> {{car.Price}}</li>
+          <li *ngIf="filter[0].displayEngine" class="list-group-item"><b>Engine:</b> {{car.Engine}}</li>
+          <li *ngIf="filter[0].displayEngineType" class="list-group-item"><b>EngineType:</b> {{car.EngineType}}</li>
+          <li *ngIf="filter[0].displayFuel_Type" class="list-group-item"><b>Fuel Type:</b> {{car.Fuel_Type}}</li>
+          <li *ngIf="filter[0].displayMax_Power" class="list-group-item"><b>Max Power:</b> {{car.Max_Power}}</li>
+          <li *ngIf="filter[0].displayMax_Torque" class="list-group-item"><b>Max Torque:</b> {{car.Max_Torque}}</li>
+          <li *ngIf="filter[0].displayMileage" class="list-group-item"><b>Mileage:</b> {{car.Mileage}}</li>
+          <li *ngIf="filter[0].displayDriving_Range" class="list-group-item"><b>Driving Range:</b> {{car.Driving_Range}}</li>
+          <li *ngIf="filter[0].displayDrivetrain" class="list-group-item"><b>Drivetrain:</b> {{car.Drivetrain}}</li>
+          <li *ngIf="filter[0].displayTransmission" class="list-group-item"><b>Transmission:</b> {{car.Transmission}}</li>
+          <li *ngIf="filter[0].displaySeating_Capacity" class="list-group-item"><b>Seating Capacity:</b> {{car.Seating_Capacity}}</li>
+
+          <li *ngIf="filter[0].displayBrand" class="list-group-item"><b>Brand:</b> {{car.Brand}}</li>
+          <li *ngIf="filter[0].displayHeadlights" class="list-group-item"><b>Headlights:</b> {{car.Headlights}}</li>
+          <li *ngIf="filter[0].displayWarranty" class="list-group-item"><b>Warranty:</b> {{car.Warranty}}</li>
+          <li *ngIf="filter[0].displayquantity" class="list-group-item"><b>Quantity:</b> {{car.quantity}}</li>
+
+        </ul>
+      
+        <a [routerLink]="['/products',car.productname]" class="btn  btn-success">
+          
+          <span class="glyphicon glyphicon-trash"></span>Details 
+        </a>
+        <a [routerLink]="['/editcar',car.productname]" class="btn  btn-success">
+          <span class="glyphicon glyphicon-trash"></span> Edit
+        </a>
+        <a (click)='deleteCar(car.id)' class="btn  btn-success">
+          <span class="glyphicon glyphicon-trash"></span> Delete
+        </a>
+      </div>
+    </div>
+    </div>
 </div>
 <div class="Add">
 <br>

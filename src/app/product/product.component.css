@@ -16,10 +16,17 @@ button{color:royalblue}
   margin-right: 30px;
   margin-left: 30px;
 }
-
+.card-title{
+  text-align: center;
+}
+.filter{
+  align-self: center;
+  margin-right: 50px;
+}
 .card{
   float:left;
   margin-right: 30px;
+  margin-bottom: 30px;
   
 }
 .Add{
@@ -33,4 +40,8 @@ a.lastViewed{
 #productcompo{
   
   padding: 30px;
+}
+.btn-success{
+  margin-right: 5 px;
+  margin-left:10px;
 }
