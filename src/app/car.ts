@@ -12,9 +12,9 @@ export class Car {
       Drivetrain:string
       Transmission:string
       Seating_Capacity:string
-      Price:boolean
-      Brand:boolean
-      Headlights:boolean
-      Warranty:boolean
+      Price:string
+      Brand:string
+      Headlights:string
+      Warranty:string
 
 }

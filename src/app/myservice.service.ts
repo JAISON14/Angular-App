@@ -66,7 +66,15 @@ export class MyserviceService {
     console.log('After creation of new prod class of product service')
     return this.http.post(this._url,newProduct,this.httpOptions);
   }
+      
+  editCar(id,updatedCar:Car)
+  {   console.log('updatedCar.productname')
+      let editCarURL=`${this._url2}/${id}`;
+      console.log(updatedCar)
+      // return "happy"
+       return this.http.put(editCarURL,updatedCar,this.httpOptions);
 
+  }
   
 }
 
