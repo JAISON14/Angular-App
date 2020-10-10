@@ -1,7 +1,12 @@
-a.active{
+/* a.active{
     color:red;
     font-weight:bold;
 }
 a{
     text-decoration:none;
+} */
+#nav {
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
 }

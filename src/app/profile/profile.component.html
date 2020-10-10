@@ -1,0 +1,35 @@
+<p>profile works!</p>
+
+<div id="myModal" >
+	<div class="modal-dialog modal-login">
+		<div class="modal-content">
+			<div class="modal-header">
+				<div class="avatar">
+					<img src="./assets/data/avatar.png" alt="Avatar">
+				</div>				
+				<h4 class="modal-title">My Profile</h4>	
+                
+			</div>
+			<div class="modal-body">
+
+					<div class="form-group">
+                        
+						<p>
+						Username : {{this.CurrentUser_name}}
+					   </p>					
+					</div>
+					<div class="form-group">
+                        
+                        <p>
+                        Mailid : {{this.CurrentUser_email}}
+                       </p>		
+				
+					</div>        
+
+					<button  class="btn btn-primary btn-lg btn-block login-btn"  (click)=getUserDetails()>Show Details</button>
+					<button  class="btn btn-primary btn-lg btn-block login-btn"  (click)=logOff()>Logout</button>
+			</div>
+
+		</div>
+	</div>
+</div>   

@@ -54,9 +54,15 @@ export class ProductComponent implements OnInit {
       );
     }
     deleteCar(id){
-      this.productService.deleteCar(id).subscribe(
-        (data:any) => this.getCars()
-      );
+      let r1 = confirm("Are you sure you want to delete this item? ");
+      if(r1==false){
+        return false;
+      }
+      if(r1== true){     
+        this.productService.deleteCar(id).subscribe(
+          (data:any) => this.getCars()
+        );
+      } 
     }
     getFilters(){
       console.log('Inside getFilters() of product component')

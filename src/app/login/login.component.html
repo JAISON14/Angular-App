@@ -99,7 +99,7 @@ body {
 <body>
 
 
-<!-- Modal HTML -->
+Modal HTML
 <div id="myModal" >
 	<div class="modal-dialog modal-login">
 		<div class="modal-content">
@@ -111,23 +111,33 @@ body {
                 
 			</div>
 			<div class="modal-body">
-				<form action="/examples/actions/confirmation.php" method="post">
+				<form [formGroup]="signupForm">
 					<div class="form-group">
-						<input type="text" class="form-control" name="username" placeholder="Username" required="required">		
+						<input type="text" id="Name" placeholder="Username" class="form-control" formControlName="user_name">	
+						<p class="lblError" *ngIf="signupForm.get('user_name').hasError('required')
+						&& !signupForm.get('user_name').pristine">
+						Username is Required
+					   </p>					
 					</div>
 					<div class="form-group">
-						<input type="password" class="form-control" name="password" placeholder="Password" required="required">	
+						<input type="password" id="password" placeholder="Password" class="form-control" formControlName="user_password">
+						<p class="lblError" *ngIf="signupForm.get('user_password').hasError('required')
+						&& !signupForm.get('user_password').pristine">
+						Password is Required
+					   </p>						
 					</div>        
 					<div class="form-group">
-						<button type="submit" class="btn btn-primary btn-lg btn-block login-btn">Login</button>
+						<button type="submit" class="btn btn-primary btn-lg btn-block login-btn" [disabled]="signupForm.invalid" (click)=login()>Login</button>
+			
 					</div>
 				</form>
 			</div>
 			<div class="modal-footer">
-				<a href="#">Forgot Password?</a>
+				<a routerLink="../signup">Not a member? Click here to Signup</a>
 			</div>
 		</div>
 	</div>
 </div>     
 </body>
-</html>
+</html> 
+

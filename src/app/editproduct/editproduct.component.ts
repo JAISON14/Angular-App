@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';  
+import { FormControl, FormGroup, Validators } from '@angular/forms';  
 import { ActivatedRoute,Params,Router } from '@angular/router';
 import { Car } from '../car';
 import { MyserviceService } from '../myservice.service';
@@ -84,24 +84,23 @@ export class EditproductComponent implements OnInit {
     this.getCars() 
 
     this.signupForm = new FormGroup({
-      productid:new FormControl(null),
-      productname:new FormControl(null),
-      img_url:new FormControl(null),
-      quantity:new FormControl(null),
-      Engine:new FormControl(null),
-      EngineType:new FormControl(null),
-      Fuel_Type: new FormControl(null),
-      Max_Power: new FormControl(null),
-      Max_Torque: new FormControl(null),
-      Mileage: new FormControl(null),
-      Driving_Range: new FormControl(null),
-      Drivetrain: new FormControl(null),
-      Transmission: new FormControl(null),
-      Seating_Capacity: new FormControl(null),
-      Price: new FormControl(null),
-      Brand: new FormControl(null),
-      Headlights: new FormControl(null),
-      Warranty: new FormControl(null),
+      productname:new FormControl(null, Validators.required),
+      img_url:new FormControl(null, Validators.required),
+      quantity:new FormControl(null, Validators.required),
+      Engine:new FormControl(null, Validators.required),
+      EngineType:new FormControl(null, Validators.required),
+      Fuel_Type: new FormControl(null, Validators.required),
+      Max_Power: new FormControl(null, Validators.required),
+      Max_Torque: new FormControl(null, Validators.required),
+      Mileage: new FormControl(null, Validators.required),
+      Driving_Range: new FormControl(null, Validators.required),
+      Drivetrain: new FormControl(null, Validators.required),
+      Transmission: new FormControl(null, Validators.required),
+      Seating_Capacity: new FormControl(null, Validators.required),
+      Price: new FormControl(null, Validators.required),
+      Brand: new FormControl(null, Validators.required),
+      Headlights: new FormControl(null, Validators.required),
+      Warranty: new FormControl(null, Validators.required),
       
     });
   }

@@ -7,8 +7,11 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { ProductdetailsComponent } from './productdetails/productdetails.component';
 import { MyguardGuard } from './myguard.guard';
 import { LoginComponent } from './login/login.component';
-import { SignupComponent } from './signup/signup.component'
-import {EditproductComponent } from './editproduct/editproduct.component'
+import { SignupComponent } from './signup/signup.component';
+import {EditproductComponent } from './editproduct/editproduct.component';
+import { AddProductComponent } from './add-product/add-product.component';
+import { ProfileComponent } from './profile/profile.component';
+import { SearchComponent } from './search/search.component'
 
 const routes: Routes = [
   { path:'', component:AboutComponent},
@@ -16,7 +19,10 @@ const routes: Routes = [
   { path:'login' , component:LoginComponent},
   { path:'products/:productname', component:ProductdetailsComponent, canActivate:[MyguardGuard]},
   { path:'editcar/:productname', component:EditproductComponent, canActivate:[MyguardGuard]},
+  { path:'addcar', component:AddProductComponent, canActivate:[MyguardGuard]},
   { path:'signup' , component:SignupComponent}, 
+  { path:'profile' , component:ProfileComponent},
+  { path:'search' , component:SearchComponent}, 
   { path:'*', component:PageNotFoundComponent}
 
 ];

@@ -15,6 +15,9 @@ import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { CommonModule } from '@angular/common';
 import { EditproductComponent } from './editproduct/editproduct.component';
+import { AddProductComponent } from './add-product/add-product.component';
+import { ProfileComponent } from './profile/profile.component';
+import { SearchComponent } from './search/search.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +28,10 @@ import { EditproductComponent } from './editproduct/editproduct.component';
     ProductdetailsComponent,
     LoginComponent,
     SignupComponent,
-    EditproductComponent
+    EditproductComponent,
+    AddProductComponent,
+    ProfileComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
