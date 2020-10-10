@@ -8,6 +8,10 @@ h2{color:green}
 label {color:rgb(117, 35, 199)}
 button{color: whitesmoke}
 
+/* .b1{
+  margin-top: 10px;
+} */
+
 .Productlist{
   display:inline;
   /* grid-gap:20px; */

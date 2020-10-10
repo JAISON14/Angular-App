@@ -2,9 +2,13 @@ import { Injectable } from '@angular/core';
 import { Product } from './Product';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable} from 'rxjs/Observable'
+
 import { Car } from './car';
 import { Filters } from './filters'
 import { User } from 'projects/udemy/src/app/auth/user.model';
+
+import { catchError } from 'rxjs/operators';
+import { of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -14,6 +18,7 @@ export class MyserviceService {
   private _url2:string="http://localhost:3000/cars";
   private _url3:string="http://localhost:3000/filters";
   private _url4:string="http://localhost:3000/users";
+  private apiUrl = 'https://jsonplaceholder.typicode.com';
   CurrentUser_name:string;
   Userloggedin:boolean=false;
   
@@ -24,6 +29,13 @@ export class MyserviceService {
   };
 
   constructor(private http: HttpClient) { }
+
+  fetchCars(id: string): Observable<Car[]> {
+    return this.http.get<Car[]>(`http://localhost:3000/cars?productname=${id}`).pipe(
+      catchError(err => of([]))
+    );
+  }
+
   getProducts(): Observable<Product[]>{
 
     console.log('Inside getProducts() of myservice')
@@ -116,4 +128,5 @@ export class MyserviceService {
     return this.Userloggedin
   }
 }
+
 
