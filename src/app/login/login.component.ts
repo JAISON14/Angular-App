@@ -12,22 +12,25 @@ import { MyserviceService } from '../myservice.service';
 export class LoginComponent implements OnInit {
   signupForm: FormGroup;
   users:User[]=[];
+  userMatched:boolean=false
+  loginAttemted:boolean=false
 
   login(){
     this.getUsers();
     console.log("Going to print this.users.length")
     console.log(this.users.length)
+    this.loginAttemted=true
+    this.userMatched=false
     for(let i = 0; i < this.users.length; i++) {
       let obj = this.users[i];
-      let userMatched:boolean=false
-
+      //  this.userMatched=false
 
       console.log(obj.user_name);
       console.log(obj.user_email);
       console.log(obj.user_password);
       if((this.signupForm.get(`user_name`).value==obj.user_name)&&(this.signupForm.get(`user_password`).value==obj.user_password))
       { 
-        userMatched=true
+        this.userMatched=true
         console.log('user_name matched');
 
         console.log('user_password matched');

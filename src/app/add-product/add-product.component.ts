@@ -37,7 +37,8 @@ export class AddProductComponent implements OnInit {
       "Price":this.signupForm.get(`Price`).value,
       "Brand":this.signupForm.get(`Brand`).value,
       "Headlights":this.signupForm.get(`Headlights`).value,
-      "Warranty":this.signupForm.get(`Warranty`).value
+      "Warranty":this.signupForm.get(`Warranty`).value,
+      "Visitcount":0
     }
     this.productService.addCar(newCar).subscribe(
       (data:any) => this.getCars(),

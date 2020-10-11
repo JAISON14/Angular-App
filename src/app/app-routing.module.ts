@@ -13,6 +13,7 @@ import { AddProductComponent } from './add-product/add-product.component';
 import { ProfileComponent } from './profile/profile.component';
 import { SearchComponent } from './search/search.component'
 
+
 const routes: Routes = [
   { path:'', component:AboutComponent},
   { path:'products', component:ProductComponent},
@@ -23,6 +24,7 @@ const routes: Routes = [
   { path:'signup' , component:SignupComponent}, 
   { path:'profile' , component:ProfileComponent},
   { path:'search' , component:SearchComponent}, 
+  { path:'chart' , loadChildren: () => import('./chart/chart.module').then(m =>m.ChartModule)},
   { path:'*', component:PageNotFoundComponent}
 
 ];

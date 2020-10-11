@@ -24,7 +24,7 @@ export class EditproductComponent implements OnInit {
     );
   }
 
-  editCar(id){
+  editCar(id,Visitcount){
     console.log('In editCar of edit compo')
     console.log(this.signupForm);
     let updatedCar={
@@ -44,29 +44,10 @@ export class EditproductComponent implements OnInit {
       "Price":this.signupForm.get(`Price`).value,
       "Brand":this.signupForm.get(`Brand`).value,
       "Headlights":this.signupForm.get(`Headlights`).value,
-      "Warranty":this.signupForm.get(`Warranty`).value
+      "Warranty":this.signupForm.get(`Warranty`).value,
+      "Visitcount":Visitcount
     }
-    // this.productService.editCar(id,updatedCar);
 
-    //  this.updatedCar.productname=this.signupForm.get(`productname`).value;
-
-    // console.log('this.updatedCar.productname')
-    // this.updatedCar.img_url=this.signupForm.get(`img_url`).value;
-    // this.updatedCar.quantity=this.signupForm.get(`quantity`).value;
-    // this.updatedCar.Engine=this.signupForm.get(`Engine`).value;
-    // this.updatedCar.EngineType=this.signupForm.get(`EngineType`).value;
-    // this.updatedCar.Fuel_Type=this.signupForm.get(`Fuel_Type`).value;
-    // this.updatedCar.Max_Power=this.signupForm.get(`Max_Power`).value;
-    // this.updatedCar.Max_Torque=this.signupForm.get(`Max_Torque`).value;
-    // this.updatedCar.Mileage=this.signupForm.get(`Mileage`).value;
-    // this.updatedCar.Driving_Range=this.signupForm.get(`Driving_Range`).value;
-    // this.updatedCar.Drivetrain=this.signupForm.get(`Drivetrain`).value;
-    // this.updatedCar.Transmission=this.signupForm.get(`Transmission`).value;
-    // this.updatedCar.Seating_Capacity=this.signupForm.get(`Seating_Capacity`).value;
-    // this.updatedCar.Price=this.signupForm.get(`Price`).value;
-    // this.updatedCar.Brand=this.signupForm.get(`Brand`).value;
-    // this.updatedCar.Headlights=this.signupForm.get(`Headlights`).value;
-    // this.updatedCar.Warranty=this.signupForm.get(`Warranty`).value;
     this.productService.editCar(id,updatedCar).subscribe(
       (data:any) => this.getCars()
     );
@@ -111,4 +92,5 @@ export class EditproductComponent implements OnInit {
 
 
 }
+
 

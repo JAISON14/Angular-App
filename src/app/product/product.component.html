@@ -178,11 +178,11 @@ Filter price returns:{{filter[0]?.displayPrice}}  -->
 
         </ul>
       
-        <a [routerLink]="['/products',car.productname]" class="btn  btn-success">
+        <a [routerLink]="['/products',car.productname]" (click)='gotoDetails(car.productname,car.id)' class="btn  btn-success">
           
           <span class="glyphicon glyphicon-trash"></span>Details 
         </a>
-        <a [routerLink]="['/editcar',car.productname]" class="btn  btn-success">
+        <a [routerLink]="['/editcar',car.productname]"  class="btn  btn-success">
           <span class="glyphicon glyphicon-trash"></span> Edit
         </a>
         <a (click)='deleteCar(car.id)' class="btn  btn-success">
@@ -202,3 +202,6 @@ Filter price returns:{{filter[0]?.displayPrice}}  -->
 </div> -->
 
 </div>
+
+
+

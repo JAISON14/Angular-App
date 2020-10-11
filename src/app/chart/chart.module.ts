@@ -1,13 +1,17 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MychartComponent } from './mychart/mychart.component';
 
+import { ChartRoutingModule } from './chart-routing.module';
+import { MychartComponent } from './mychart/mychart.component';
+import { ChartsModule } from 'ng2-charts';
 
 
 @NgModule({
   declarations: [MychartComponent],
   imports: [
-    CommonModule
+    CommonModule,
+    ChartRoutingModule,
+    ChartsModule
   ]
 })
 export class ChartModule { }

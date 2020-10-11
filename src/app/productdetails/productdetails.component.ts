@@ -13,6 +13,7 @@ export class ProductdetailsComponent implements OnInit {
   cars:Car[]=[];
   productname
   
+  
 
 
   constructor(private route:ActivatedRoute,private router:Router,private productService:MyserviceService) { }
@@ -22,33 +23,38 @@ export class ProductdetailsComponent implements OnInit {
       err => console.log(err)
     );
   }
-  // findcar(){
-  //   console.log('Inside findcars() of productdetails component')
-  //   this.cars.forEach(element => {
-  //     this.index=this.index+1
-  //     console.log('Inside foreach of productdetails component')
-  //     console.log(element.productname)
-  //     if(this.productname.equals(element.productname)){
-  //       console.log('Inside if of foreach of productdetails component')
-  //       this.result=this.index;
-  //     }
-      
-  //   });
 
+
+
+  // updateCar(id,Visitcount){
+  //   console.log('In updateCar of product details compo')
+
+  //   let updatedCar={
+  //     "productname": this.signupForm.get(`productname`).value,
+  //     "img_url":this.signupForm.get(`img_url`).value,
+  //     "quantity":this.signupForm.get(`quantity`).value,
+  //     "Engine":this.signupForm.get(`Engine`).value,
+  //     "EngineType":this.signupForm.get(`EngineType`).value,
+  //     "Fuel_Type":this.signupForm.get(`Fuel_Type`).value,
+  //     "Max_Power":this.signupForm.get(`Max_Power`).value,
+  //     "Max_Torque":this.signupForm.get(`Max_Torque`).value,
+  //     "Mileage":this.signupForm.get(`Mileage`).value,
+  //     "Driving_Range":this.signupForm.get(`Driving_Range`).value,
+  //     "Drivetrain":this.signupForm.get(`Drivetrain`).value,
+  //     "Transmission":this.signupForm.get(`Transmission`).value,
+  //     "Seating_Capacity":this.signupForm.get(`Seating_Capacity`).value,
+  //     "Price":this.signupForm.get(`Price`).value,
+  //     "Brand":this.signupForm.get(`Brand`).value,
+  //     "Headlights":this.signupForm.get(`Headlights`).value,
+  //     "Warranty":this.signupForm.get(`Warranty`).value,
+  //     "Visitcount":Visitcount
+  //   }
+
+  //   this.productService.editCar(id,updatedCar).subscribe(
+  //     (data:any) => this.getCars()
+  //   );
+  //   console.log(id)
   // }
-  findcar(){
-    console.log('Inside findcars() of productdetails component')
-    let i
-    for(i=1;i<this.cars.length;i++)
-    { console.log(JSON.stringify(this.cars[1].productname))
-      let pname=JSON.stringify(this.cars[1].productname)
-      if(this.productname===pname)
-      {
-        this.id=i;
-        console.log(this.id)
-      }
-    }
-  }
 
   ngOnInit(): void {
     this.route.paramMap.forEach((params:Params)=>{
@@ -57,12 +63,15 @@ export class ProductdetailsComponent implements OnInit {
       console.log(this.productname)
     // this.productname=parse
     })
-    this.getCars() 
-    this.findcar()
+    this.getCars()
+    // this.MarkVisited() 
+    // this.findcar()
   }
   goBack(): void {
+
     this.router.navigate(['products',{productname:this.productname}]);
   }
 
 }
+
 

@@ -74,6 +74,59 @@ export class ProductComponent implements OnInit {
 
       console.log(JSON.stringify(this.filter));
     }
+
+    gotoDetails(productname,id){
+      console.log('Inside gotoDetails')
+      console.log('The id of gotoDetails')
+      console.log(productname)
+      this.getCars()
+      console.log("Going to print this.cars.length")
+      console.log(this.cars.length)
+      
+  
+      for(let i = 0; i < this.cars.length; i++) {
+        let obj = this.cars[i];
+        //  this.userMatched=false
+  
+        if((productname==obj.productname))
+        { 
+  
+          console.log('Current Product Visit count');
+          console.log(obj.Visitcount);
+          
+          const Visitcount=obj.Visitcount+1
+          console.log('Updated Product Visit count');
+          console.log(Visitcount);
+  
+          let updatedCar={
+            "productname":obj.productname,
+            "img_url":obj.img_url,
+            "quantity":obj.quantity,
+            "Engine":obj.Engine,
+            "EngineType":obj.EngineType,
+            "Fuel_Type":obj.Fuel_Type,
+            "Max_Power":obj.Max_Power,
+            "Max_Torque":obj.Max_Torque,
+            "Mileage":obj.Mileage,
+            "Driving_Range":obj.Driving_Range,
+            "Drivetrain":obj.Drivetrain,
+            "Transmission":obj.Transmission,
+            "Seating_Capacity":obj.Seating_Capacity,
+            "Price":obj.Price,
+            "Brand":obj.Brand,
+            "Headlights":obj.Headlights,
+            "Warranty":obj.Warranty,
+            "Visitcount":Visitcount      
+          }
+          this.productService.editCar(id,updatedCar).subscribe(
+            (data:any) => this.getCars()
+          );
+  
+  
+        }
+  
+       }
+    }
     
   ngOnInit(): void{ 
    console.log('Inside ngOnInit() of product component')

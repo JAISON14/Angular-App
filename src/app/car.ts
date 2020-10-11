@@ -16,5 +16,5 @@ export class Car {
       Brand:string
       Headlights:string
       Warranty:string
-
+      Visitcount:number
 }
