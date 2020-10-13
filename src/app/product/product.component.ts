@@ -77,7 +77,6 @@ export class ProductComponent implements OnInit {
     
     }
 
-
     }
     getFilters(){
       console.log('Inside getFilters() of product component')

@@ -31,7 +31,6 @@
       "productname": "Hyundai Venue",
       "img_url": "https://imgd.aeplcdn.com/310x174/n/cw/ec/35455/venue-exterior-right-front-three-quarter.jpeg?q=85",
       "quantity": "7",
-      "id": 2,
       "Engine": "1197cc, 4 Cylinders Inline,4 Valves/Cylinder",
       "EngineType": "1.2 l Kappa",
       "Fuel_Type": "Petrol",
@@ -46,7 +45,8 @@
       "Brand": "Hyundai",
       "Headlights": "Halogen",
       "Warranty": "3 Years",
-      "Visitcount": 0
+      "Visitcount": 3,
+      "id": 2
     },
     {
       "productname": "Mahindra XUV300",
@@ -66,14 +66,13 @@
       "Brand": "Mahindra",
       "Headlights": "Halogen",
       "Warranty": "3 Years",
-      "Visitcount": 2,
+      "Visitcount": 6,
       "id": 3
     },
     {
       "productname": "Kia Sonet",
       "img_url": "https://imgd.aeplcdn.com/664x374/n/cw/ec/41523/sonet-exterior-right-front-three-quarter-48.jpeg?q=85",
       "quantity": "7",
-      "id": 4,
       "Engine": "1497cc, 4 Cylinders Inline,4 Valves/Cylinder",
       "EngineType": "Smartstream G 1.2",
       "Fuel_Type": "Petrol",
@@ -88,13 +87,13 @@
       "Brand": "Kia",
       "Headlights": "Halogen",
       "Warranty": "3 Years",
-      "Visitcount": 0
+      "Visitcount": 2,
+      "id": 4
     },
     {
       "productname": "MG Hector",
       "img_url": "https://imgd.aeplcdn.com/272x153/cw/ec/36756/MG-Hector-Right-Front-Three-Quarter-166301.jpg?wm=0&q=85",
       "quantity": "7",
-      "id": 5,
       "Engine": "1451cc, 4 Cylinders Inline,4 Valves/Cylinder",
       "EngineType": "1.5L Turbocharged",
       "Fuel_Type": "Petrol",
@@ -109,7 +108,8 @@
       "Brand": "MG",
       "Headlights": "Halogen Projector",
       "Warranty": "5 Years",
-      "Visitcount": 0
+      "Visitcount": 1,
+      "id": 5
     },
     {
       "productname": "Ford Freestyle",
@@ -136,7 +136,6 @@
       "productname": "BMW 7 Series",
       "img_url": "https://imgd.aeplcdn.com/272x153/cw/ec/38113/BMW-7-Series-Right-Front-Three-Quarter-164132.jpg?wm=0&q=85",
       "quantity": "7",
-      "id": 7,
       "Engine": "2993cc, 6 Cylinders Inline,4 Valves/Cylinder",
       "EngineType": "B57 Turbocharged I6",
       "Fuel_Type": "Diesel",
@@ -151,7 +150,8 @@
       "Brand": "BMW",
       "Headlights": "LED",
       "Warranty": "2 Years",
-      "Visitcount": 0
+      "Visitcount": 1,
+      "id": 7
     },
     {
       "productname": "Tata Altroz",
@@ -173,6 +173,27 @@
       "Warranty": "3",
       "Visitcount": 1,
       "id": 8
+    },
+    {
+      "productname": "Suzuki Swift",
+      "img_url": "https://imgd.aeplcdn.com/664x374/n/cw/ec/26742/swift-exterior-right-front-three-quarter-2.jpeg?q=85",
+      "quantity": "4",
+      "Engine": "1197cc, 4 Cylinders Inline, 4 Valves/Cylinder, DOHC",
+      "EngineType": "1.2 L VVT",
+      "Fuel_Type": "Petrol",
+      "Max_Power": "82 bhp @ 6000 rpm",
+      "Max_Torque": "113 Nm @ 4200 rpm",
+      "Mileage": "21.21",
+      "Driving_Range": "784.77",
+      "Drivetrain": "FWD",
+      "Transmission": "Manual - 5 Gears",
+      "Seating_Capacity": "5",
+      "Price": "₹ 6.08 Lakh",
+      "Brand": "Suzuki",
+      "Headlights": "Halogen",
+      "Warranty": "2 Years",
+      "Visitcount": 1,
+      "id": 9
     }
   ],
   "filters": [
