@@ -1,264 +1,264 @@
 
 <div class="container">
-    {{productname}}
+  {{productname}}
 
+  <div  *ngFor='let car of cars'>
+      <div *ngIf="productname===car.productname">
+          {{car.id}}
+      </div>
+  </div>
+  <form [formGroup]="signupForm"  >
     <div  *ngFor='let car of cars'>
-        <div *ngIf="productname===car.productname">
-            {{car.id}}
-        </div>
-    </div>
-    <form [formGroup]="signupForm"  >
-      <div  *ngFor='let car of cars'>
-        <div *ngIf="productname===car.productname">
-      <h3 style="text-align:center">
-          Add Car Info
-      </h3>
+      <div *ngIf="productname===car.productname">
+    <h3 style="text-align:center">
+        Add Car Info
+    </h3>
 
-      <div class="form-group">
+    <div class="form-group">
 
-        <label for="productname">Name: <span class="lblError">*</span></label>
-        <div class="controls">
-          <input type="text" id="productname" placeholder="Name" class="form-control" formControlName="productname">
-          <p class="lblError" *ngIf="signupForm.get('productname').hasError('required')
-          && !signupForm.get('productname').pristine">
-            Car Name is Required
-         </p>
-        </div>
+      <label for="productname">Name: <span class="lblError">*</span></label>
+      <div class="controls">
+        <input type="text" id="productname" placeholder="Name" class="form-control" formControlName="productname">
+        <p class="lblError" *ngIf="signupForm.get('productname').hasError('required')
+        && !signupForm.get('productname').pristine">
+          Car Name is Required
+       </p>
       </div>
+    </div>
+      <div class="form-row">
+          <div class="col">
+            <div class="form-group">
+              <!-- Price -->
+              <label for="Price">Price: <span class="lblError">*</span></label>
+              <div class="controls">
+                <input type="text" id="Price" placeholder="Price" class="form-control" formControlName="Price">
+                <p class="lblError" *ngIf="signupForm.get('Price').hasError('required')
+                && !signupForm.get('Price').pristine">
+                Price is Required
+               </p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="form-group">
+              <!-- img_url -->
+              <label for="img_url">Image Url:<span class="lblError">*</span></label>
+              <div class="controls">
+                <input type="url" id="phone" placeholder="Image Url" class="form-control" formControlName="img_url">
+                <p class="lblError" *ngIf="signupForm.get('img_url').hasError('required')
+                && !signupForm.get('img_url').pristine">
+                   Image URL is Required
+               </p>
+              </div>
+            </div>
+          </div>
+        </div>
         <div class="form-row">
-            <div class="col">
-              <div class="form-group">
-                <!-- Price -->
-                <label for="Price">Price: <span class="lblError">*</span></label>
-                <div class="controls">
-                  <input type="text" id="Price" placeholder="E-mail" class="form-control" formControlName="Price">
-                  <p class="lblError" *ngIf="signupForm.get('Price').hasError('required')
-                  && !signupForm.get('Price').pristine">
-                  Price is Required
-                 </p>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="form-group">
-                <!-- img_url -->
-                <label for="img_url">Image Url:<span class="lblError">*</span></label>
-                <div class="controls">
-                  <input type="url" id="phone" placeholder="Phone" class="form-control" formControlName="img_url">
-                  <p class="lblError" *ngIf="signupForm.get('img_url').hasError('required')
-                  && !signupForm.get('img_url').pristine">
-                     Image URL is Required
-                 </p>
-                </div>
+          <div class="col">
+            <div class="form-group">
+              <!-- Engine -->
+              <label for="Engine">Engine: <span class="lblError">*</span></label>
+              <div class="controls">
+                <input type="text" id="email" placeholder="Engine" class="form-control" formControlName="Engine">
+                <p class="lblError" *ngIf="signupForm.get('Engine').hasError('required')
+                && !signupForm.get('Engine').pristine">
+                Engine is Required
+               </p>
               </div>
             </div>
           </div>
-          <div class="form-row">
-            <div class="col">
-              <div class="form-group">
-                <!-- Engine -->
-                <label for="Engine">Engine: <span class="lblError">*</span></label>
-                <div class="controls">
-                  <input type="text" id="email" placeholder="E-mail" class="form-control" formControlName="Engine">
-                  <p class="lblError" *ngIf="signupForm.get('Engine').hasError('required')
-                  && !signupForm.get('Engine').pristine">
-                  Engine is Required
-                 </p>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="form-group">
-                <!-- Mobile -->
-                <label for="EngineType">EngineType: <span class="lblError">*</span></label>
-                <div class="controls">
-                  <input type="text" id="phone" placeholder="Phone" class="form-control" formControlName="EngineType">
-                  <p class="lblError" *ngIf="signupForm.get('EngineType').hasError('required')
-                  && !signupForm.get('EngineType').pristine">
-                  EngineType is Required
-                 </p>
-                </div>
+          <div class="col">
+            <div class="form-group">
+              <!-- Mobile -->
+              <label for="EngineType">EngineType: <span class="lblError">*</span></label>
+              <div class="controls">
+                <input type="text" id="phone" placeholder="EngineType" class="form-control" formControlName="EngineType">
+                <p class="lblError" *ngIf="signupForm.get('EngineType').hasError('required')
+                && !signupForm.get('EngineType').pristine">
+                EngineType is Required
+               </p>
               </div>
             </div>
           </div>
-          <div class="form-row">
-            <div class="col">
-              <div class="form-group">
-                <!-- Max_Power -->
-                <label for="Max_Power">Max Power: <span class="lblError">*</span></label>
-                <div class="controls">
-                  <input type="text" id="email" placeholder="E-mail" class="form-control" formControlName="Max_Power">
-                  <p class="lblError" *ngIf="signupForm.get('Max_Power').hasError('required')
-                  && !signupForm.get('Max_Power').pristine">
-                  Max Power is Required
-                 </p>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="form-group">
-                <!-- Max_Torque -->
-                <label for="Max_Torque">Max Torque: <span class="lblError">*</span></label>
-                <div class="controls">
-                  <input type="text" id="phone" placeholder="Phone" class="form-control" formControlName="Max_Torque">
-                  <p class="lblError" *ngIf="signupForm.get('Max_Torque').hasError('required')
-                  && !signupForm.get('Max_Torque').pristine">
-                  Max Torque is Required
-                 </p>
-                </div>
+        </div>
+        <div class="form-row">
+          <div class="col">
+            <div class="form-group">
+              <!-- Max_Power -->
+              <label for="Max_Power">Max Power: <span class="lblError">*</span></label>
+              <div class="controls">
+                <input type="text" id="email" placeholder="Max_Power" class="form-control" formControlName="Max_Power">
+                <p class="lblError" *ngIf="signupForm.get('Max_Power').hasError('required')
+                && !signupForm.get('Max_Power').pristine">
+                Max Power is Required
+               </p>
               </div>
             </div>
           </div>
-          <div class="form-row">
-            <div class="col">
-              <div class="form-group">
-                <!-- Mileage -->
-                <label for="Mileage">Mileage: <span class="lblError">*</span></label>
-                <div class="controls">
-                  <input type="text" id="email" placeholder="Mileage" class="form-control" formControlName="Mileage">
-                  <p class="lblError" *ngIf="signupForm.get('Mileage').hasError('required')
-                  && !signupForm.get('Mileage').pristine">
-                  Mileage is Required
-                 </p>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="form-group">
-                <!-- Brand -->
-                <label for="Brand">Brand: <span class="lblError">*</span></label>
-                <div class="controls">
-                  <input type="text" id="phone" placeholder="Brand" class="form-control" formControlName="Brand">
-                  <p class="lblError" *ngIf="signupForm.get('Brand').hasError('required')
-                  && !signupForm.get('Brand').pristine">
-                  Brand is Required
-                 </p>
-                </div>
+          <div class="col">
+            <div class="form-group">
+              <!-- Max_Torque -->
+              <label for="Max_Torque">Max Torque: <span class="lblError">*</span></label>
+              <div class="controls">
+                <input type="text" id="Max_Torque'" placeholder="Max_Torque'" class="form-control" formControlName="Max_Torque">
+                <p class="lblError" *ngIf="signupForm.get('Max_Torque').hasError('required')
+                && !signupForm.get('Max_Torque').pristine">
+                Max Torque is Required
+               </p>
               </div>
             </div>
           </div>
-          <div class="form-row">
-            <div class="col">
-              <div class="form-group">
-                <!-- Driving_Range -->
-                <label for="Driving_Range">Driving Range: <span class="lblError">*</span></label>
-                <div class="controls">
-                  <input type="text" id="email" placeholder="Driving_Range" class="form-control" formControlName="Driving_Range">
-                  <p class="lblError" *ngIf="signupForm.get('Driving_Range').hasError('required')
-                  && !signupForm.get('Driving_Range').pristine">
-                  Driving Range is Required
-                 </p>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="form-group">
-                <!-- Drivetrain -->
-                <label for="Drivetrain">Drivetrain: <span class="lblError">*</span></label>
-                <div class="controls">
-                  <input type="text" id="phone" placeholder="Drivetrain" class="form-control" formControlName="Drivetrain">
-                  <p class="lblError" *ngIf="signupForm.get('Drivetrain').hasError('required')
-                  && !signupForm.get('Drivetrain').pristine">
-                  Drivetrain is Required
-                 </p>
-                </div>
+        </div>
+        <div class="form-row">
+          <div class="col">
+            <div class="form-group">
+              <!-- Mileage -->
+              <label for="Mileage">Mileage: <span class="lblError">*</span></label>
+              <div class="controls">
+                <input type="text" id="email" placeholder="Mileage" class="form-control" formControlName="Mileage">
+                <p class="lblError" *ngIf="signupForm.get('Mileage').hasError('required')
+                && !signupForm.get('Mileage').pristine">
+                Mileage is Required
+               </p>
               </div>
             </div>
           </div>
-          <div class="form-row">
-            <div class="col">
-              <div class="form-group">
-                <!-- Transmission -->
-                <label for="Transmission">Transmission: <span class="lblError">*</span></label>
-                <div class="controls">
-                  <input type="text" id="email" placeholder="Transmission" class="form-control" formControlName="Transmission">
-                  <p class="lblError" *ngIf="signupForm.get('Transmission').hasError('required')
-                  && !signupForm.get('Transmission').pristine">
-                  Transmission is Required
-                 </p>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="form-group">
-                <!-- Seating_Capacity -->
-                <label for="Seating_Capacity">Seating_Capacity: <span class="lblError">*</span></label>
-                <div class="controls">
-                  <input type="text" id="phone" placeholder="Seating_Capacity" class="form-control" formControlName="Seating_Capacity">
-                  <p class="lblError" *ngIf="signupForm.get('Seating_Capacity').hasError('required')
-                  && !signupForm.get('Seating_Capacity').pristine">
-                  Seating Capacity is Required
-                 </p>
-                </div>
+          <div class="col">
+            <div class="form-group">
+              <!-- Brand -->
+              <label for="Brand">Brand: <span class="lblError">*</span></label>
+              <div class="controls">
+                <input type="text" id="phone" placeholder="Brand" class="form-control" formControlName="Brand">
+                <p class="lblError" *ngIf="signupForm.get('Brand').hasError('required')
+                && !signupForm.get('Brand').pristine">
+                Brand is Required
+               </p>
               </div>
             </div>
           </div>
-          <div class="form-row">
-            <div class="col">
-              <div class="form-group">
-                <!-- Fuel_Type -->
-                <label for="Fuel_Type">Fuel Type: <span class="lblError">*</span></label>
-                <div class="controls">
-                  <input type="text" id="email" placeholder="Fuel_Type" class="form-control" formControlName="Fuel_Type">
-                  <p class="lblError" *ngIf="signupForm.get('Fuel_Type').hasError('required')
-                  && !signupForm.get('Fuel_Type').pristine">
-                  Fuel Type is Required
-                 </p>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="form-group">
-                <!-- Headlights -->
-                <label for="Headlights">Headlights: <span class="lblError">*</span></label>
-                <div class="controls">
-                  <input type="text" id="phone" placeholder="Headlights" class="form-control" formControlName="Headlights">
-                  <p class="lblError" *ngIf="signupForm.get('Headlights').hasError('required')
-                  && !signupForm.get('Headlights').pristine">
-                  Headlights is Required
-                 </p>
-                </div>
+        </div>
+        <div class="form-row">
+          <div class="col">
+            <div class="form-group">
+              <!-- Driving_Range -->
+              <label for="Driving_Range">Driving Range: <span class="lblError">*</span></label>
+              <div class="controls">
+                <input type="text" id="email" placeholder="Driving_Range" class="form-control" formControlName="Driving_Range">
+                <p class="lblError" *ngIf="signupForm.get('Driving_Range').hasError('required')
+                && !signupForm.get('Driving_Range').pristine">
+                Driving Range is Required
+               </p>
               </div>
             </div>
           </div>
-          <div class="form-row">
-            <div class="col">
-              <div class="form-group">
-                <!-- Warranty -->
-                <label for="Warranty">Warranty: <span class="lblError">*</span></label>
-                <div class="controls">
-                  <input type="text" id="email" placeholder="Warranty" class="form-control" formControlName="Warranty">
-                  <p class="lblError" *ngIf="signupForm.get('Warranty').hasError('required')
-                  && !signupForm.get('Warranty').pristine">
-                  Warranty is Required
-                 </p>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="form-group">
-                <!-- quantity -->
-                <label for="quantity">Quantity: <span class="lblError">*</span></label>
-                <div class="controls">
-                  <input type="text" id="phone" placeholder="quantity" class="form-control" formControlName="quantity">
-                  <p class="lblError" *ngIf="signupForm.get('quantity').hasError('required')
-                  && !signupForm.get('quantity').pristine">
-                  Quantity is Required
-                 </p>
-                </div>
+          <div class="col">
+            <div class="form-group">
+              <!-- Drivetrain -->
+              <label for="Drivetrain">Drivetrain: <span class="lblError">*</span></label>
+              <div class="controls">
+                <input type="text" id="phone" placeholder="Drivetrain" class="form-control" formControlName="Drivetrain">
+                <p class="lblError" *ngIf="signupForm.get('Drivetrain').hasError('required')
+                && !signupForm.get('Drivetrain').pristine">
+                Drivetrain is Required
+               </p>
               </div>
             </div>
           </div>
+        </div>
+        <div class="form-row">
+          <div class="col">
+            <div class="form-group">
+              <!-- Transmission -->
+              <label for="Transmission">Transmission: <span class="lblError">*</span></label>
+              <div class="controls">
+                <input type="text" id="email" placeholder="Transmission" class="form-control" formControlName="Transmission">
+                <p class="lblError" *ngIf="signupForm.get('Transmission').hasError('required')
+                && !signupForm.get('Transmission').pristine">
+                Transmission is Required
+               </p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="form-group">
+              <!-- Seating_Capacity -->
+              <label for="Seating_Capacity">Seating_Capacity: <span class="lblError">*</span></label>
+              <div class="controls">
+                <input type="text" id="phone" placeholder="Seating_Capacity" class="form-control" formControlName="Seating_Capacity">
+                <p class="lblError" *ngIf="signupForm.get('Seating_Capacity').hasError('required')
+                && !signupForm.get('Seating_Capacity').pristine">
+                Seating Capacity is Required
+               </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="col">
+            <div class="form-group">
+              <!-- Fuel_Type -->
+              <label for="Fuel_Type">Fuel Type: <span class="lblError">*</span></label>
+              <div class="controls">
+                <input type="text" id="email" placeholder="Fuel_Type" class="form-control" formControlName="Fuel_Type">
+                <p class="lblError" *ngIf="signupForm.get('Fuel_Type').hasError('required')
+                && !signupForm.get('Fuel_Type').pristine">
+                Fuel Type is Required
+               </p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="form-group">
+              <!-- Headlights -->
+              <label for="Headlights">Headlights: <span class="lblError">*</span></label>
+              <div class="controls">
+                <input type="text" id="phone" placeholder="Headlights" class="form-control" formControlName="Headlights">
+                <p class="lblError" *ngIf="signupForm.get('Headlights').hasError('required')
+                && !signupForm.get('Headlights').pristine">
+                Headlights is Required
+               </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="col">
+            <div class="form-group">
+              <!-- Warranty -->
+              <label for="Warranty">Warranty: <span class="lblError">*</span></label>
+              <div class="controls">
+                <input type="text" id="email" placeholder="Warranty" class="form-control" formControlName="Warranty">
+                <p class="lblError" *ngIf="signupForm.get('Warranty').hasError('required')
+                && !signupForm.get('Warranty').pristine">
+                Warranty is Required
+               </p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="form-group">
+              <!-- quantity -->
+              <label for="quantity">Quantity: <span class="lblError">*</span></label>
+              <div class="controls">
+                <input type="text" id="phone" placeholder="quantity" class="form-control" formControlName="quantity">
+                <p class="lblError" *ngIf="signupForm.get('quantity').hasError('required')
+                && !signupForm.get('quantity').pristine">
+                Quantity is Required
+               </p>
+              </div>
+            </div>
+          </div>
+        </div>
 
-      
+    
 
-      <div class="form-group">
-        <button class="btn btn-success" [disabled]="signupForm.invalid" style="width: 15%"
-        (click)=editCar(car.id,car.Visitcount)>
-          Submit
-        </button>
-      </div>
+    <div class="form-group">
+      <button class="btn btn-success" [disabled]="signupForm.invalid" style="width: 15%"
+      (click)=editCar(car.id,car.Visitcount)>
+        Submit
+      </button>
     </div>
   </div>
+</div>
 </form>
-  </div>
+</div>

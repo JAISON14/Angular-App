@@ -13,6 +13,7 @@ export class AddProductComponent implements OnInit {
 
   signupForm: FormGroup; 
   cars:Car[]=[];
+  carAdded:boolean=false
   constructor(private route:ActivatedRoute,private router:Router,private productService:MyserviceService) { 
 
   }
@@ -44,6 +45,7 @@ export class AddProductComponent implements OnInit {
       (data:any) => this.getCars(),
       err => console.log(err)
       );
+      this.carAdded=true
   }
   getCars()
     {
@@ -51,6 +53,10 @@ export class AddProductComponent implements OnInit {
       (cars:any)=> this.cars=cars,
       err => console.log(err)
     );
+  }
+  goBack(): void {
+
+    this.router.navigate(['products']);
   }
 
   ngOnInit(): void {
@@ -78,4 +84,5 @@ export class AddProductComponent implements OnInit {
 
 }
 }
+
 

@@ -15,6 +15,10 @@ export class MychartComponent implements OnInit {
   finalLabels:string[]=[]
   finalChartData:number[]=[]
   noOfCars:number
+  top7Enabled:boolean=false
+  top5Enabled:boolean=false
+  top3Enabled:boolean=false
+
   // label= ['2006', '2007', '2008', '2009', '2010', '2011', '2012']
 
   barChartLabels =this.Labels 
@@ -57,7 +61,36 @@ export class MychartComponent implements OnInit {
     this.getCars()
     console.log("Going to print this.cars.length")
     console.log(this.cars.length)
+    console.log(this.noOfCars)
     this.noOfCars=this.cars.length
+    setTimeout(() => 
+    { 
+      console.log("Going to print this.cars.length after delay")
+      this.noOfCars=this.cars.length
+      console.log(this.cars.length)
+      console.log(this.noOfCars)
+      if(this.noOfCars>=7){
+        this.top3Enabled=this.top5Enabled=this.top7Enabled=true;
+
+      }
+      else if(this.noOfCars>=5){
+  
+        (document.getElementById("Top7")as HTMLButtonElement).disabled = true;
+      }
+      else if(this.noOfCars>=3){
+  
+        (document.getElementById("Top7")as HTMLButtonElement).disabled = true;
+        (document.getElementById("Top5")as HTMLButtonElement).disabled = true;
+      }
+      if(this.noOfCars<3){
+  
+        (document.getElementById("Top7")as HTMLButtonElement).disabled = true;
+        (document.getElementById("Top5")as HTMLButtonElement).disabled = true;
+        (document.getElementById("Top3")as HTMLButtonElement).disabled = true;
+      }
+    },
+    500);
+
 
     for(let i = 0; i < this.cars.length; i++) {
       let obj = this.cars[i];
@@ -89,6 +122,7 @@ export class MychartComponent implements OnInit {
     console.log(this.finalChartData)
     console.log(this.ChartData)
     this.finalChartData=[]
+    this.finalLabels=[]
     for(let i=0;i<3;i++)
     {
       this.finalLabels[i]=this.Labels[i]
@@ -116,6 +150,7 @@ export class MychartComponent implements OnInit {
     console.log(this.finalChartData)
     console.log(this.ChartData)
     this.finalChartData=[]
+    this.finalLabels=[]
     for(let i=0;i<5;i++)
     {
       this.finalLabels[i]=this.Labels[i]
@@ -143,6 +178,7 @@ export class MychartComponent implements OnInit {
     console.log(this.finalChartData)
     console.log(this.ChartData)
     this.finalChartData=[]
+    this.finalLabels=[]
     for(let i=0;i<7;i++)
     {
       this.finalLabels[i]=this.Labels[i]
@@ -186,7 +222,10 @@ export class MychartComponent implements OnInit {
     }
   }
   ngOnInit(): void {
-    this.getData()
+    this.getCars()
+    this.getData();
+    if(this.noOfCars>5)
+    (document.getElementById("Top5")as HTMLButtonElement).disabled = true
   }
 
 }

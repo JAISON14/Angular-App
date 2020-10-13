@@ -69,7 +69,7 @@ export class ProductdetailsComponent implements OnInit {
   }
   goBack(): void {
 
-    this.router.navigate(['products',{productname:this.productname}]);
+    this.router.navigate(['products']);
   }
 
 }

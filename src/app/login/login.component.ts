@@ -28,10 +28,10 @@ export class LoginComponent implements OnInit {
       console.log(obj.user_name);
       console.log(obj.user_email);
       console.log(obj.user_password);
-      if((this.signupForm.get(`user_name`).value==obj.user_name)&&(this.signupForm.get(`user_password`).value==obj.user_password))
+      if((this.signupForm.get(`user_email`).value==obj.user_email)&&(this.signupForm.get(`user_password`).value==obj.user_password))
       { 
         this.userMatched=true
-        console.log('user_name matched');
+        console.log('user_email matched');
 
         console.log('user_password matched');
     
@@ -44,6 +44,10 @@ export class LoginComponent implements OnInit {
   myFunction(){
     
   }
+  goBack(): void {
+
+    this.router.navigate(['products']);
+  }
   getUsers(){
     this.productService.getUsers().subscribe(
       (users:any)=> this.users=users,
@@ -55,7 +59,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     this.signupForm = new FormGroup({
-      user_name: new FormControl(null, Validators.required),
+      user_email: new FormControl(null, Validators.required),
       user_password: new FormControl(null, [Validators.required])
           
     });

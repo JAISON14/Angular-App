@@ -1,4 +1,4 @@
-<p>profile works!</p>
+
 
 <div id="myModal" >
 	<div class="modal-dialog modal-login">
@@ -11,25 +11,38 @@
                 
 			</div>
 			<div class="modal-body">
-
+				<div *ngIf="enableDetails">
+				<div *ngIf="userMatched">
 					<div class="form-group">
-                        
-						<p>
-						Username : {{this.CurrentUser_name}}
-					   </p>					
-					</div>
-					<div class="form-group">
-                        
-                        <p>
-                        Mailid : {{this.CurrentUser_email}}
-                       </p>		
+                        <li class="list-group-item">First Name : <b>{{this.CurrentUser_name}}</b></li>
 				
-					</div>        
+                        <li class="list-group-item">Last Name : <b>{{this.user_Lname}}</b></li>
+			
+                        <li class="list-group-item">Mailid : <b>{{this.CurrentUser_email}}</b></li>	
+
+                        <li class="list-group-item">Location : <b>{{this.user_loc}}</b></li>
+
+                        <li class="list-group-item">Mobile : <b>{{this.user_number}}</b></li>
+				
+					</div>  
+				</div>
+				<div *ngIf="!userMatched">
+					<li class="list-group-item">  <b>  USER NOT LOGGED IN !!!</b></li>
+
+				</div>
+				</div>
+				
 
 					<button  class="btn btn-primary btn-lg btn-block login-btn"  (click)=getUserDetails()>Show Details</button>
+					<div *ngIf="loggedOff">
+					<li class="list-group-item"><b>USER LOGGED OFF  !!!</b></li>
+
+					</div>
 					<button  class="btn btn-primary btn-lg btn-block login-btn"  (click)=logOff()>Logout</button>
 			</div>
 
 		</div>
 	</div>
 </div>   
+
+

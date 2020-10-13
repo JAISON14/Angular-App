@@ -1,5 +1,5 @@
 <p>add-product works!</p>
-<div class="addProductForm">
+<div *ngIf="!carAdded" class="addProductForm">
     <form [formGroup]="signupForm" >
 
           <h3 style="text-align:center">
@@ -253,5 +253,11 @@
 
     </form>
      
+</div>
+<div *ngIf="carAdded">
+
+  <h4> Car has been added</h4>
+  <button (click)="goBack()">Back</button>
+
 </div>
 
