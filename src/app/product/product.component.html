@@ -28,6 +28,9 @@ Filter price returns:{{filter[0]?.displayPrice}}  -->
   <button [routerLink]="['/addcar']" class="btn btn-success b1" type="button"  >
     Add Product
   </button>
+  <button [routerLink]="['/chart']" class="btn btn-success b1" type="button"  >
+    View Chart
+  </button>
 
 </p>
 <div class="collapse" id="collapseExample">
@@ -185,7 +188,7 @@ Filter price returns:{{filter[0]?.displayPrice}}  -->
         <a [routerLink]="['/editcar',car.productname]"  class="btn  btn-success">
           <span class="glyphicon glyphicon-trash"></span> Edit
         </a>
-        <a (click)='deleteCar(car.id)' class="btn  btn-success">
+        <a (click)=deleteCar(car.id)  class="btn  btn-success">
           <span class="glyphicon glyphicon-trash"></span> Delete
         </a>
       </div>

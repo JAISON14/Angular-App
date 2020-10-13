@@ -19,6 +19,7 @@ import { AddProductComponent } from './add-product/add-product.component';
 import { ProfileComponent } from './profile/profile.component';
 import { SearchComponent } from './search/search.component';
 import { ChartsModule } from 'ng2-charts';
+import { DeleteComponent } from './delete/delete.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { ChartsModule } from 'ng2-charts';
     EditproductComponent,
     AddProductComponent,
     ProfileComponent,
-    SearchComponent
+    SearchComponent,
+    DeleteComponent
   ],
   imports: [
     BrowserModule,

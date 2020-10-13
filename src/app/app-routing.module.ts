@@ -12,7 +12,7 @@ import {EditproductComponent } from './editproduct/editproduct.component';
 import { AddProductComponent } from './add-product/add-product.component';
 import { ProfileComponent } from './profile/profile.component';
 import { SearchComponent } from './search/search.component'
-
+import { DeleteComponent } from './delete/delete.component'
 
 const routes: Routes = [
   { path:'', component:AboutComponent},
@@ -25,6 +25,7 @@ const routes: Routes = [
   { path:'profile' , component:ProfileComponent},
   { path:'search' , component:SearchComponent}, 
   { path:'chart' , loadChildren: () => import('./chart/chart.module').then(m =>m.ChartModule)},
+  { path:'delete/:id' , component:DeleteComponent, canActivate:[MyguardGuard]},
   { path:'*', component:PageNotFoundComponent}
 
 ];

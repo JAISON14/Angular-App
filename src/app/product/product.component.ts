@@ -2,7 +2,7 @@ import { Component, OnInit, Input,Output,EventEmitter } from '@angular/core';
 //import { EventEmitter } from 'protractor';
 import { Product } from '../Product';
 import { MyserviceService } from './../myservice.service';
-import { ActivatedRoute,Params } from '@angular/router';
+import { ActivatedRoute,Params,Router } from '@angular/router';
 import { Car } from '../car';
 import { Filters } from '../filters';
 
@@ -38,7 +38,7 @@ export class ProductComponent implements OnInit {
     }
   // @Input( ) company: string 
   // @Output() notify = new EventEmitter<Product>();
-  constructor(private productService:MyserviceService,private _route:ActivatedRoute) { }
+  constructor(private productService:MyserviceService,private _route:ActivatedRoute,private router:Router) { }
     getProducts(){
       this.productService.getProducts().subscribe(
         (products:any)=> this.products=products,
@@ -54,15 +54,30 @@ export class ProductComponent implements OnInit {
       );
     }
     deleteCar(id){
-      let r1 = confirm("Are you sure you want to delete this item? ");
-      if(r1==false){
+      let Userloggedin=this.productService.loginStatus()
+      if(Userloggedin){
+        let r1 = confirm("Are you sure you want to delete this item? ");
+        if(r1==false){
+          return false;
+        }
+        if(r1== true){     
+          this.productService.deleteCar(id).subscribe(
+            (data:any) => this.getCars()
+          );
+        } 
+
+      }
+      else{
+      let r = confirm("Please login to continue ");
+      if (r == true) {
+        this.router.navigate(['login'])
+      } else {
         return false;
       }
-      if(r1== true){     
-        this.productService.deleteCar(id).subscribe(
-          (data:any) => this.getCars()
-        );
-      } 
+    
+    }
+
+
     }
     getFilters(){
       console.log('Inside getFilters() of product component')
