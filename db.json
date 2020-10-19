@@ -45,7 +45,7 @@
       "Brand": "Hyundai",
       "Headlights": "Halogen",
       "Warranty": "3 Years",
-      "Visitcount": 6,
+      "Visitcount": 9,
       "id": 2
     },
     {
@@ -66,7 +66,7 @@
       "Brand": "Mahindra",
       "Headlights": "Halogen",
       "Warranty": "3 Years",
-      "Visitcount": 7,
+      "Visitcount": 9,
       "id": 3
     },
     {
@@ -87,7 +87,7 @@
       "Brand": "Kia",
       "Headlights": "Halogen",
       "Warranty": "3 Years",
-      "Visitcount": 2,
+      "Visitcount": 6,
       "id": 4
     },
     {
@@ -150,7 +150,7 @@
       "Brand": "BMW",
       "Headlights": "LED",
       "Warranty": "2 Years",
-      "Visitcount": 1,
+      "Visitcount": 4,
       "id": 7
     },
     {
@@ -196,23 +196,23 @@
       "id": 9
     },
     {
-      "productname": "q",
-      "img_url": "q",
-      "quantity": "q",
-      "Engine": "q",
-      "EngineType": "q",
-      "Fuel_Type": "q",
-      "Max_Power": "q",
-      "Max_Torque": "q",
-      "Mileage": "q",
-      "Driving_Range": "q",
-      "Drivetrain": "q",
-      "Transmission": "q",
-      "Seating_Capacity": "q",
-      "Price": "q",
-      "Brand": "q",
-      "Headlights": "q",
-      "Warranty": "q",
+      "productname": "qwert",
+      "img_url": "u",
+      "quantity": "11",
+      "Engine": "i",
+      "EngineType": "i",
+      "Fuel_Type": "o",
+      "Max_Power": "ii",
+      "Max_Torque": "i",
+      "Mileage": "11.11",
+      "Driving_Range": "111",
+      "Drivetrain": "oo",
+      "Transmission": "o",
+      "Seating_Capacity": "111",
+      "Price": "y",
+      "Brand": "o",
+      "Headlights": "o",
+      "Warranty": "o",
       "Visitcount": 0,
       "id": 10
     }
@@ -223,12 +223,12 @@
       "displayproductname": true,
       "displayquantity": false,
       "displayEngine": true,
-      "displayEngineType": true,
+      "displayEngineType": false,
       "displayFuel_Type": false,
       "displayMax_Power": true,
       "displayMax_Torque": true,
       "displayMileage": true,
-      "displayDriving_Range": true,
+      "displayDriving_Range": false,
       "displayDrivetrain": false,
       "displayTransmission": true,
       "displaySeating_Capacity": false,

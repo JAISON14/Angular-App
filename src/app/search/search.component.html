@@ -1,6 +1,6 @@
 
 
-<input 
+<!-- <input 
   type="string" 
   placeholder="Search Car"
   (input)="searchCars($event.target.value)"
@@ -44,34 +44,37 @@
 
         </div>
       </div>
-      <!-- <div class="card" style="width: 18rem;">
-        <div class="card-body">
-          
-          <img class="card-img-top" [src]="car.img_url">
-          
-          <h5 class="card-title">{{car.productname}}</h5>
-        
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item"><b>Price:</b> {{car.Price}}</li>
-            <li class="list-group-item"><b>Engine:</b> {{car.Engine}}</li>
-            <li class="list-group-item"><b>EngineType:</b> {{car.EngineType}}</li>
-            <li class="list-group-item"><b>Fuel Type:</b> {{car.Fuel_Type}}</li>
-            <li class="list-group-item"><b>Max Power:</b> {{car.Max_Power}}</li>
-            <li class="list-group-item"><b>Max Torque:</b> {{car.Max_Torque}}</li>
-            <li  class="list-group-item"><b>Mileage:</b> {{car.Mileage}}</li>
-            <li  class="list-group-item"><b>Driving Range:</b> {{car.Driving_Range}}</li>
-            <li class="list-group-item"><b>Drivetrain:</b> {{car.Drivetrain}}</li>
-            <li class="list-group-item"><b>Transmission:</b> {{car.Transmission}}</li>
-            <li  class="list-group-item"><b>Seating Capacity:</b> {{car.Seating_Capacity}}</li>
-  
-            <li class="list-group-item"><b>Brand:</b> {{car.Brand}}</li>
-            <li class="list-group-item"><b>Headlights:</b> {{car.Headlights}}</li>
-            <li class="list-group-item"><b>Warranty:</b> {{car.Warranty}}</li>
-            <li class="list-group-item"><b>Quantity:</b> {{car.quantity}}</li>
-  
-          </ul>
-        </div>
-    </div> -->
+
     <br>
     </div>
+</ng-container> -->
+<ng-container>
+<div class="content" role="main">
+  <div class="card">
+    <div class="form-group">
+      
+      <input type="email" class="form-control" id="search-text" aria-describedby="search-text" [(ngModel)]="searchText"
+        placeholder="Enter Car name to search" autofocus>
+        
+    </div>
+    <div >
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item" *ngFor="let productname of productnames | appFilter: searchText" >
+        <span appHighlight
+        [searchedWord]="searchText" [content]="productname" [classToApply]="'font-weight-bold'" [setTitle]="'true'"></span>
+        
+        <a [routerLink]="['/products',productname]" >
+          
+          <i class="far fa-hand-point-right"></i>  
+          </a>
+        
+      </li>
+
+    </ul>
+  </div>
+  </div>
+</div>
 </ng-container>
+
+
+

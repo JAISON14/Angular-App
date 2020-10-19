@@ -19,6 +19,9 @@ import { AddProductComponent } from './add-product/add-product.component';
 import { ProfileComponent } from './profile/profile.component';
 import { SearchComponent } from './search/search.component';
 import { ChartsModule } from 'ng2-charts';
+import { FilterPipe } from './filter.pipe';
+import { HighlightDirective } from './highlight.directive';
+import { HomeComponent } from './home/home.component';
 
 
 @NgModule({
@@ -33,7 +36,10 @@ import { ChartsModule } from 'ng2-charts';
     EditproductComponent,
     AddProductComponent,
     ProfileComponent,
-    SearchComponent
+    SearchComponent,
+    FilterPipe,
+    HighlightDirective,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

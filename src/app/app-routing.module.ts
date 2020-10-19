@@ -11,11 +11,13 @@ import { SignupComponent } from './signup/signup.component';
 import {EditproductComponent } from './editproduct/editproduct.component';
 import { AddProductComponent } from './add-product/add-product.component';
 import { ProfileComponent } from './profile/profile.component';
-import { SearchComponent } from './search/search.component'
+import { SearchComponent } from './search/search.component';
+import { HomeComponent } from './home/home.component';
+
 
 
 const routes: Routes = [
-  { path:'', component:AboutComponent},
+  { path:'', component:HomeComponent},
   { path:'products', component:ProductComponent},
   { path:'login' , component:LoginComponent},
   { path:'products/:productname', component:ProductdetailsComponent, canActivate:[MyguardGuard]},
@@ -26,7 +28,7 @@ const routes: Routes = [
   { path:'search' , component:SearchComponent}, 
   { path:'chart' , loadChildren: () => import('./chart/chart.module').then(m =>m.ChartModule)},
 
-  { path:'*', component:PageNotFoundComponent}
+  { path:'**', component:PageNotFoundComponent}
 
 ];
 

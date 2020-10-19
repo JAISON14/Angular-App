@@ -1,4 +1,4 @@
-<p>add-product works!</p>
+
 <div *ngIf="!carAdded" class="addProductForm">
     <form [formGroup]="signupForm" >
 
@@ -107,10 +107,10 @@
                     <!-- Mileage -->
                     <label for="Mileage">Mileage: <span class="lblError">*</span></label>
                     <div class="controls">
-                      <input type="text" id="email" placeholder="Mileage" class="form-control" formControlName="Mileage">
+                      <input type="text" id="email" placeholder="Mileage (2 decimal spaces)" class="form-control" formControlName="Mileage">
                       <p class="lblError" *ngIf="signupForm.get('Mileage').hasError('required')
                       && !signupForm.get('Mileage').pristine">
-                      Mileage is Required
+                      Mileage is Required (2 decimal spaces)
                      </p>
                     </div>
                   </div>
@@ -135,10 +135,10 @@
                     <!-- Driving_Range -->
                     <label for="Driving_Range">Driving Range: <span class="lblError">*</span></label>
                     <div class="controls">
-                      <input type="text" id="email" placeholder="Driving_Range" class="form-control" formControlName="Driving_Range">
+                      <input type="text" id="email" placeholder="Driving Range (In Km)" class="form-control" formControlName="Driving_Range">
                       <p class="lblError" *ngIf="signupForm.get('Driving_Range').hasError('required')
                       && !signupForm.get('Driving_Range').pristine">
-                      Driving Range is Required
+                      Driving Range is Required (Must be number)
                      </p>
                     </div>
                   </div>
@@ -176,10 +176,10 @@
                     <!-- Seating_Capacity -->
                     <label for="Seating_Capacity">Seating_Capacity: <span class="lblError">*</span></label>
                     <div class="controls">
-                      <input type="text" id="phone" placeholder="Seating_Capacity" class="form-control" formControlName="Seating_Capacity">
+                      <input type="text" id="phone" placeholder="Seating Capacity (In number of Persons)" class="form-control" formControlName="Seating_Capacity">
                       <p class="lblError" *ngIf="signupForm.get('Seating_Capacity').hasError('required')
                       && !signupForm.get('Seating_Capacity').pristine">
-                      Seating Capacity is Required
+                      Seating Capacity is Required(In Number)
                      </p>
                     </div>
                   </div>
@@ -232,10 +232,10 @@
                     <!-- quantity -->
                     <label for="quantity">Quantity: <span class="lblError">*</span></label>
                     <div class="controls">
-                      <input type="text" id="phone" placeholder="quantity" class="form-control" formControlName="quantity">
+                      <input type="text" id="phone" placeholder="Quantity" class="form-control" formControlName="quantity">
                       <p class="lblError" *ngIf="signupForm.get('quantity').hasError('required')
                       && !signupForm.get('quantity').pristine">
-                      Quantity is Required
+                      Quantity is Required(Must be number)
                      </p>
                     </div>
                   </div>

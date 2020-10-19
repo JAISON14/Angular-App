@@ -64,20 +64,21 @@ export class EditproductComponent implements OnInit {
     })
     this.getCars() 
 
+    
     this.signupForm = new FormGroup({
-      productname:new FormControl(null, Validators.required),
+      productname:new FormControl(this.productname, Validators.required),
       img_url:new FormControl(null, Validators.required),
-      quantity:new FormControl(null, Validators.required),
+      quantity:new FormControl(null, [Validators.required,Validators.pattern("^[0-9]*$")]),
       Engine:new FormControl(null, Validators.required),
       EngineType:new FormControl(null, Validators.required),
       Fuel_Type: new FormControl(null, Validators.required),
       Max_Power: new FormControl(null, Validators.required),
       Max_Torque: new FormControl(null, Validators.required),
-      Mileage: new FormControl(null, Validators.required),
-      Driving_Range: new FormControl(null, Validators.required),
+      Mileage: new FormControl(null, [Validators.required,Validators.pattern('^\\d+\\.\\d{2}$')]),
+      Driving_Range: new FormControl(null, [Validators.required,Validators.pattern("^[0-9]*$")]),
       Drivetrain: new FormControl(null, Validators.required),
       Transmission: new FormControl(null, Validators.required),
-      Seating_Capacity: new FormControl(null, Validators.required),
+      Seating_Capacity: new FormControl(null, [Validators.required,Validators.pattern("^[0-9]*$")]),
       Price: new FormControl(null, Validators.required),
       Brand: new FormControl(null, Validators.required),
       Headlights: new FormControl(null, Validators.required),
@@ -89,7 +90,6 @@ export class EditproductComponent implements OnInit {
     // console.log(this.signupForm);
     // console.log(this.signupForm.get(`productname`).value);
     }
-
 
 }
 
