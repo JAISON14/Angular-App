@@ -3,22 +3,30 @@ import { FormControl, FormGroup,Validators } from '@angular/forms';
 import { ActivatedRoute,Params,Router } from '@angular/router';
 import { MyserviceService } from '../myservice.service';
 import { Car } from '../car';
+import { CompocanDeactivate } from '../compocan-deactivate';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-add-product',
   templateUrl: './add-product.component.html',
   styleUrls: ['./add-product.component.css']
 })
-export class AddProductComponent implements OnInit {
+export class AddProductComponent implements OnInit,CompocanDeactivate {
 
   signupForm: FormGroup; 
   cars:Car[]=[];
   carAdded:boolean=false
+  isDirty:boolean=false
   constructor(private route:ActivatedRoute,private router:Router,private productService:MyserviceService) { 
 
   }
+  canDeactivate():boolean 
+  {
+    return !this.isDirty;
+  }
   addCar()
   {
+    this.isDirty=false
     console.log('In addCar of addCar compo')
     console.log(this.signupForm);
     let newCar={

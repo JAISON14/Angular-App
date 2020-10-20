@@ -13,7 +13,7 @@ import { AddProductComponent } from './add-product/add-product.component';
 import { ProfileComponent } from './profile/profile.component';
 import { SearchComponent } from './search/search.component';
 import { HomeComponent } from './home/home.component';
-
+import { FormGuard } from './form.guard';
 
 
 const routes: Routes = [
@@ -21,8 +21,8 @@ const routes: Routes = [
   { path:'products', component:ProductComponent},
   { path:'login' , component:LoginComponent},
   { path:'products/:productname', component:ProductdetailsComponent, canActivate:[MyguardGuard]},
-  { path:'editcar/:productname', component:EditproductComponent, canActivate:[MyguardGuard]},
-  { path:'addcar', component:AddProductComponent, canActivate:[MyguardGuard]},
+  { path:'editcar/:productname', component:EditproductComponent, canActivate:[MyguardGuard],canDeactivate:[FormGuard]},
+  { path:'addcar', component:AddProductComponent, canActivate:[MyguardGuard],canDeactivate:[FormGuard]},
   { path:'signup' , component:SignupComponent}, 
   { path:'profile' , component:ProfileComponent},
   { path:'search' , component:SearchComponent}, 

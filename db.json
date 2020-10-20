@@ -45,7 +45,7 @@
       "Brand": "Hyundai",
       "Headlights": "Halogen",
       "Warranty": "3 Years",
-      "Visitcount": 9,
+      "Visitcount": 12,
       "id": 2
     },
     {
@@ -66,7 +66,7 @@
       "Brand": "Mahindra",
       "Headlights": "Halogen",
       "Warranty": "3 Years",
-      "Visitcount": 9,
+      "Visitcount": 10,
       "id": 3
     },
     {
@@ -87,7 +87,7 @@
       "Brand": "Kia",
       "Headlights": "Halogen",
       "Warranty": "3 Years",
-      "Visitcount": 6,
+      "Visitcount": 7,
       "id": 4
     },
     {
@@ -196,23 +196,23 @@
       "id": 9
     },
     {
-      "productname": "qwert",
-      "img_url": "u",
-      "quantity": "11",
-      "Engine": "i",
-      "EngineType": "i",
-      "Fuel_Type": "o",
-      "Max_Power": "ii",
-      "Max_Torque": "i",
-      "Mileage": "11.11",
-      "Driving_Range": "111",
-      "Drivetrain": "oo",
-      "Transmission": "o",
-      "Seating_Capacity": "111",
-      "Price": "y",
-      "Brand": "o",
-      "Headlights": "o",
-      "Warranty": "o",
+      "productname": "Tata Nexon",
+      "img_url": "https://imgd.aeplcdn.com/1056x594/n/cw/ec/41645/tata-nexon-right-front-three-quarter3.jpeg?q=85",
+      "quantity": "8",
+      "Engine": "1199 cc, 3 Cylinders Inline, 2 Valves/Cylinder, SOHC",
+      "EngineType": "1.2L Revotron",
+      "Fuel_Type": "Petrol",
+      "Max_Power": "118 bhp @ 5500 rpm",
+      "Max_Torque": "170 Nm @ 1750 rpm",
+      "Mileage": "17.40",
+      "Driving_Range": "765",
+      "Drivetrain": "FWD",
+      "Transmission": "Manual - 6 Gears",
+      "Seating_Capacity": "5",
+      "Price": "₹ 8.22 Lakh",
+      "Brand": "Tata",
+      "Headlights": "Halogen Projector",
+      "Warranty": "3 Years",
       "Visitcount": 0,
       "id": 10
     }
