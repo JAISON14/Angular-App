@@ -14,7 +14,8 @@ import { Observable } from 'rxjs';
 export class AddProductComponent implements OnInit,CompocanDeactivate {
 
   signupForm: FormGroup; 
-  cars:Car[]=[];
+  // cars:Car[]=[];
+  cars:Car[]
   carAdded:boolean=false
   isDirty:boolean=false
   constructor(private route:ActivatedRoute,private router:Router,private productService:MyserviceService) { 

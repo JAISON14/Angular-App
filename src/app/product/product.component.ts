@@ -24,29 +24,27 @@ export class ProductComponent implements OnInit {
     flag:boolean=true;
     
     link="https://imgd.aeplcdn.com/310x174/n/cw/ec/47016/urban-cruiser-exterior-right-front-three-quarter.jpeg?q=85alt="
-    AddProduct()
-    {
-      console.log('Inside AddProduct() of product component')
-      this.productService.AddProduct(this.pname,this.quant).subscribe(
-        (data:any)=> this.getProducts()
-      )
-       this.latestproduct=new Product()
-      //  this.latestproduct.productname=this.pname;
-      //  this.latestproduct.quantity=this.quant;
-      // this.notify.emit(this.latestproduct);
+    // AddProduct()
+    // {
+    //   console.log('Inside AddProduct() of product component')
+    //   this.productService.AddProduct(this.pname,this.quant).subscribe(
+    //     (data:any)=> this.getProducts()
+    //   )
+    //    this.latestproduct=new Product()
+
       
-    }
+    // }
   // @Input( ) company: string 
   // @Output() notify = new EventEmitter<Product>();
   constructor(private productService:MyserviceService,private _route:ActivatedRoute,private router:Router) { }
-    getProducts(){
-      this.productService.getProducts().subscribe(
-        (products:any)=> this.products=products,
-        err => console.log(err)
-      );
-      console.log(JSON.stringify(this.products[0]));
+    // getProducts(){
+    //   this.productService.getProducts().subscribe(
+    //     (products:any)=> this.products=products,
+    //     err => console.log(err)
+    //   );
+    //   console.log(JSON.stringify(this.products[0]));
       
-    }
+    // }
     getCars(){
       this.productService.getCars().subscribe(
         (cars:any)=> this.cars=cars,
@@ -146,7 +144,7 @@ export class ProductComponent implements OnInit {
    console.log('Inside ngOnInit() of product component')
    this.getFilters()
    this.getCars()   
-   this.getProducts()
+  //  this.getProducts()
    
    
       
@@ -158,4 +156,5 @@ export class ProductComponent implements OnInit {
   
 
 }
+
 

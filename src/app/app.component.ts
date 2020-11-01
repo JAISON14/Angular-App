@@ -9,18 +9,18 @@ import { Product } from './Product';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'assign4';
-  company='Amazon'
-  pname='jaison'
+  title = 'Cap';
+
+
   flag=false
   loginStatus:boolean=false
   CurrentUser_name:string;
-  latestproduct:Product
-  onNotify(product:Product){
-    this.latestproduct= product
-    this.flag=true
-    console.count("flag is "+this.flag)
-  }
+
+  // onNotify(product:Product){
+  //   this.latestproduct= product
+  //   this.flag=true
+  //   console.count("flag is "+this.flag)
+  // }
 
   loginCheck(){
     this.loginStatus=this.productService.loginStatus()
@@ -42,4 +42,5 @@ export class AppComponent implements OnInit {
 
   }
 }
+
 
